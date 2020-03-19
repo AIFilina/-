@@ -1,0 +1,77 @@
+/*
+Студентка 05-901 группы Филина Айна Игоревна
+Задание на классы номер 1
+*/
+#include <iostream>
+#include"math.h"
+using namespace std;
+
+class Point
+{
+private:
+	int x;
+	int y;
+public:
+Point()
+	{
+		x = 0;
+		y = 0;
+		cout << "x = " << x << endl;
+		cout << "y = " << y << endl << endl;
+	}
+Point(int X, int Y)
+	{
+		x = X;
+		y = Y;
+		cout << "x = " << x << endl;
+		cout << "y = " << y << endl << endl;
+	}
+void coordinates() {
+		cout << "Координаты точки:(" << x << ", " << y << ")" << endl;
+	}
+void distance() 
+	{
+		cout << "Расстояние от начала координат до точки: R= " << sqrt(x * x + y * y) << endl<<endl;
+	}
+void move() 
+	{
+		int a, b;
+		cout << "Введите координаты а и b:" << endl;
+		cin >> a >> b;
+		cout << "Новые координаты точки,перемещенные на (a,b): (" << x + a << ", " << y + b << ")" << endl;
+	}
+void set_coordinates(int X,int Y) 
+	{
+		x = X;
+		y = Y;
+    }
+int X() 
+	{
+		cout<<"Координата x="<<x<<endl;
+	}
+int Y() 
+	{
+		cout<<"Координата y="<<y;
+	}
+void set_scalar(int X, int Y, int scalar)
+{
+	x = X * scalar;
+	y = Y * scalar;
+}
+};
+
+int main()
+{
+	setlocale(LC_ALL, "rus");
+
+	Point obj1;
+	Point obj2(100, 200);
+	obj2.coordinates();
+	obj2.distance();
+	obj2.move();
+	obj2.set_coordinates(100, 200);
+	obj2.X();
+	obj2.Y();
+	obj2.set_scalar(100, 200, 2);
+	return 0;
+}
